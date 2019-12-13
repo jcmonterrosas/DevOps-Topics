@@ -11,19 +11,19 @@ pipeline {
       parallel {
         stage('Atentication User Module') {
           steps {
-            build(job: 'Crear modulo de autenticacion', quietPeriod: 2)
+            echo 'Crear modulo de autenticacion'
           }
         }
 
         stage('Profile Module') {
           steps {
-            build 'Profile user'
+            echo 'Profile user'
           }
         }
 
         stage('Financial module') {
           steps {
-            build 'Finanzas'
+            echo 'Finanzas'
           }
         }
 
@@ -32,7 +32,7 @@ pipeline {
 
     stage('User Management Module ') {
       steps {
-        build 'Tokens generate'
+        echo 'Tokens generate'
       }
     }
 
