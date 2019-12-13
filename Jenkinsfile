@@ -36,6 +36,29 @@ pipeline {
       }
     }
 
+    stage('Test') {
+      parallel {
+        stage('Funtional production') {
+          steps {
+            echo 'pruebas funcionales de producto'
+          }
+        }
+
+        stage('Integration production') {
+          steps {
+            echo 'pruebas de integracion'
+          }
+        }
+
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        echo 'Despliegue'
+      }
+    }
+
   }
   environment {
     test = 'test1'
